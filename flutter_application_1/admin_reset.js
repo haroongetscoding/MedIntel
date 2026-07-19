@@ -6,6 +6,7 @@ if (!email || !newPassword) {
   process.exit(1);
 }
 
+
 admin.initializeApp({ projectId: 'med-intel-d0b1e' });
 admin.auth().getUserByEmail(email.trim())
   .then(user => admin.auth().updateUser(user.uid, { password: newPassword }))
